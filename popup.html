@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add to HubSpot</title>
+    <style>
+      body {
+        width: 300px;
+        padding: 10px;
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+      }
+
+      h1 {
+        text-align: center;
+        color: #FF7A59;
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+      #status {
+        font-size: 14px;
+      }
+
+      #apiKeySection, #mainSection {
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      input[type="password"] {
+        width: 200px;
+        padding: 6px;
+        font-size: 13px;
+      }
+
+      #saveKeyBtn, #removeKeyBtn {
+        padding: 6px 12px;
+        font-size: 13px;
+        border-radius: 4px;
+        margin-left: 10px;
+      }
+
+      #saveKeyBtn {
+        background: #FF7A59;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+
+      #removeKeyBtn {
+        background: #000000;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="./cover.png" width="100px" alt="Linkedin to HubSpot" style="display: block; margin: 0 auto;">
+    <h1>LinkedIn to HubSpot</h1>
+
+    <div id="apiKeySection" style="display:none;">
+      <input type="password" id="apiKeyInput" placeholder="Enter HubSpot API Key">
+      <button id="saveKeyBtn">Save</button>
+    </div>
+
+    <div id="mainSection" style="display:none;">
+      <div style="padding: 1rem 0;" id="status"></div>
+      <button id="removeKeyBtn">Remove API Key</button>
+      <!-- Mapping Table -->
+      <div id="mappingSection" style="margin-top:20px; display:none;">
+        <!-- <h2 style="font-size:16px; color:#333; margin-bottom:8px;">Field Mapping</h2> -->
+        <form id="mappingForm">
+          <table id="mappingTable" style="width:100%; border-collapse:collapse; font-size:13px;">
+            <thead>
+              <tr>
+                <th style="border-bottom:1px solid #ccc; text-align:left; padding:4px;">LinkedIn Field</th>
+                <th style="border-bottom:1px solid #ccc; text-align:left; padding:4px;">HubSpot Field</th>
+              </tr>
+            </thead>
+            <tbody id="mappingTableBody">
+              <!-- Rows will be dynamically filled by popup.js -->
+            </tbody>
+          </table>
+          <button type="submit" id="saveMappingBtn" style="margin-top:10px; background:#FF7A59; color:#fff; border:none; padding:6px 12px; border-radius:4px; cursor:pointer;">
+            Save Mapping
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
